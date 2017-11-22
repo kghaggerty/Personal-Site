@@ -4,7 +4,7 @@ module.exports = function foo(grunt) {
       pkg: grunt.file.readJSON("package.json"),
       watch: {
         scripts: {
-          files: ["**/scripts/**/*.js", "!node_modules/**/*.js"],
+          files: ["**/*.js", "!node_modules/**/*.js"],
           tasks: ["eslint", "browserify"],
           options: {
             spawn: false,
@@ -28,7 +28,7 @@ module.exports = function foo(grunt) {
       browserify: {
         dist: {
           files: {
-            "build/bundle.js": ["scripts/main.js"],
+            "build/bundle.js": ["main.js"],
           },
           options: {
             browserifyOptions: {
@@ -39,18 +39,18 @@ module.exports = function foo(grunt) {
       },
       eslint: {
         src: [
-          "**/scripts/**/*.js",
+          "**/*.js",
           "!node_modules/**/*.js",
         ],
       },
     });
-  
+
     // Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("gruntify-eslint");
     grunt.loadNpmTasks("grunt-browserify");
-  
+
     // Default task(s).
     grunt.registerTask("default", ["eslint", "browserify", "uglify", "watch"]);
   };

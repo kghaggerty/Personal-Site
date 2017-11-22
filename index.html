@@ -10,13 +10,33 @@
 <body>
     <div class="navbar">
         <ul>
-        <li class="homepage"><a href="Home.asp">Home</a></li>
-        <li class="blogpage"><a href="Blog.asp">News</a></li>
-        <li class="projectspage"><a href="Projects.asp">Contact</a></li>
-        <li class="aboutpage"><a href="Resume.asp">About</a></li>
+        <li class="homepage"><a href="index.html">Home</a></li>
+        <li class="blogpage"><a href="Blog.html">Blog</a></li>
+        <li class="projectspage"><a href="Projects.html">Projects</a></li>
+        <li><a class="resumepage" href="index.html">Resume</a></li>
+        <li class="aboutpage"><a href="Contact.html">Contact</a></li>        
         </ul>
     </div>
 
-    <script scr="./build/bundle.js"></script>
+    <section id="header" class="main">
+        <h1>Welcome to my site!</h1>
+        <p>Welcome to my personal site.  I am currently a student at Nashville Software School and will graduate in March. The purpose of this website is practice building a full web page application as well as to show some of my projects that I am doing here at school!  I also have a section dedicated to my resume and blog posts of my life while at NSS. </p>
+    </section>
+
+    
+    <section id="projects" class="projects hidden"></section>
+
+    <section id="resume" class="resume hidden"></section>
+
+    <section id="blog" class="blog hidden"></section>
+
+    <section id="contact" class="contact hidden"></section>
+    
+
+    <footer>Yee</footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"
+      integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+      crossorigin="anonymous"></script>
+    <script src="./build/bundle.js"></script>
 </body>
 </html>
